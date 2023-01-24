@@ -15,15 +15,12 @@
             "type": "time"
           }, 
           {
-            "background": "#29315A",
-            "foreground": "#E4F34A",
-            "leading_diamond": " \ue0b6",
+            "foreground": "#a4e8a9",
             "properties": {
-              "fetch_version": false
+              "fetch_version": true
             },
-            "style": "diamond",
+            "style": "plain",
             "template": "\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
-            "trailing_diamond": "\ue0b4",
             "type": "python"
           },
           {
