@@ -15,15 +15,6 @@
             "type": "time"
           }, 
           {
-            "foreground": "#a4e8a9",
-            "properties": {
-              "fetch_version": true
-            },
-            "style": "plain",
-            "template": "\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
-            "type": "python"
-          },
-          {
             "type": "shell",
             "style": "plain",
             "foreground": "#E06C75",
@@ -69,6 +60,15 @@
               "{{ if gt .Code 0 }}#E06C75{{ end }}"
             ],
             "template": " x{{ .Meaning }}"
+          },
+          {
+            "foreground": "#a4e8a9",
+            "properties": {
+              "fetch_version": true
+            },
+            "style": "plain",
+            "template": "\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
+            "type": "python"
           },
           {
             "foreground": "#b8ff75",
