@@ -13,7 +13,7 @@
             "style": "plain",
             "template": "[{{ .CurrentDate | date .Format }}]",
             "type": "time"
-          }, 
+          },
           {
             "type": "shell",
             "style": "plain",
