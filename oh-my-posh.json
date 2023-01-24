@@ -15,20 +15,6 @@
             "type": "time"
           },
           {
-            "type": "shell",
-            "style": "plain",
-            "foreground": "#E06C75",
-            "properties": {
-              "mapped_shell_names": {
-                "pwsh": "pwsh",
-                "powershell": "pswh",
-                "cmd": "Cmd",
-                "bash": "Bash"
-              }
-            },
-            "template": " \ue795 {{ .Name }}"
-          },
-          {
             "foreground": "#F3C267",
             "foreground_templates": [
               "{{ if or (.Working.Changed) (.Staging.Changed) }}#FF9248{{ end }}",
@@ -43,7 +29,7 @@
               "fetch_upstream_icon": true
             },
             "style": "plain",
-            "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
+            "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
             "type": "git"
           }
         ],
@@ -62,7 +48,7 @@
             "template": " x{{ .Meaning }}"
           },
           {
-            "foreground": "#b8ff75",
+            "foreground": "#E5C07B",
             "foreground_templates": [
               "{{ if gt .Code 0 }}#E06C75{{ end }}"
             ],
@@ -73,16 +59,23 @@
             "style": "diamond",
             "template": " {{ .FormattedMs }} ",
             "type": "executiontime"
-          },
-          {
-            "foreground": "#a4e8a9",
+          }
+        ],
+        "type": "prompt"
+      },
+      {
+        "alignment": "left",
+        "newline": true,
+        "segments": [
+	  {
+            "foreground": "#E06C75",
             "properties": {
               "fetch_version": true
             },
             "style": "plain",
             "template": "\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
             "type": "python"
-          },
+          }
         ],
         "type": "prompt"
       },
